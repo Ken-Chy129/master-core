@@ -7,28 +7,28 @@ import java.util.Map;
  * @author Ken-Chy129
  * @date 2024/8/11
  */
-public class CommandRequest {
+public class Request {
 
     /**
      * 请求名称
      */
-    private String requestName;
+    private int requestCode;
 
     /**
      * 变量列表
      */
     private Map<String, String> parameterMap;
 
-    public CommandRequest() {
+    public Request() {
         parameterMap = new HashMap<>();
     }
 
-    public String getRequestName() {
-        return requestName;
+    public int getRequestCode() {
+        return requestCode;
     }
 
-    public void setRequestName(String requestName) {
-        this.requestName = requestName;
+    public void setRequestCode(int requestCode) {
+        this.requestCode = requestCode;
     }
 
     public Map<String, String> getParameterMap() {
