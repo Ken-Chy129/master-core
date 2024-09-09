@@ -18,10 +18,30 @@ public class Result<T> implements Serializable {
 
     private T data;
 
+    public static <T> Result<T> success() {
+        Result<T> result = new Result<>();
+        result.setSuccess(true);
+        return result;
+    }
+
     public static <T> Result<T> success(T data) {
         Result<T> result = new Result<>();
         result.setSuccess(true);
         result.setData(data);
+        return result;
+    }
+
+    public static <T> Result<T> error() {
+        Result<T> result = new Result<>();
+        result.setSuccess(false);
+        result.setMessage("未知异常");
+        return result;
+    }
+
+    public static <T> Result<T> error(RuntimeException exception) {
+        Result<T> result = new Result<>();
+        result.setSuccess(false);
+        result.setMessage(exception.getMessage());
         return result;
     }
 
